@@ -28,6 +28,8 @@ requirements:
     - pinocchio                              # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - libgomp      # [linux]
+    - llvm-openmp  # [osx]
   host:
     - assimp
     - eigen
@@ -35,8 +37,6 @@ requirements:
     - eigen-abi-devel
     - libboost-devel
     - libboost-python-devel
-    - libgomp      # [linux]
-    - llvm-openmp  # [osx]
     - lxml
     - octomap
     - pinocchio
