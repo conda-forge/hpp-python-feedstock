@@ -1,5 +1,5 @@
 {% set name = "hpp-python" %}
-{% set version = "7.0.0" %}
+{% set version = "8.0.0" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: bf1a81dadfa0860e30789df68e033ad0c7584a75cbd08fb611015bf1ec559c4d
+  sha256: 65ae03a5ebe97dbd0e6d1cd02b3d4a3aabe7cdf69fa59885beaeb2309646f621
   patches:
-   - patches/osx-fix.patch  # [osx]
+    - patches/osx-fix.patch # [osx]
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win or python_impl == 'pypy']
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
